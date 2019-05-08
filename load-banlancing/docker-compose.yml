@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  sv1_dos:
+    image: php-docker-apache-example
+    container_name: container_sv1_dos
+  sv2_dos:
+    image: php-docker-apache-example
+    container_name: container_sv2_dos
+  nginx:
+    image: nginx
+    container_name: nginx_dos
+    ports:
+      - "8080:80"
+    volumes:
+      - "./conf:/etc/nginx/conf.d"
